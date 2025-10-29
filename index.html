@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>राष्ट्रीय स्वयंसेवक संघ, सांगवी गट - प्रारंभिक वर्ग २०२५</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Marathi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS कोड */
+        :root {
+            --main-color: #4CAF50; /* गडद हिरवा */
+            --secondary-color: #FFC107; /* नारंगी/पिवळा */
+            --highlight-color: #D32F2F; /* लाल रंग */
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+            --white: #fff;
+        }
+
+        /* बेस स्टाइलिंग */
+        body {
+            font-family: 'Tiro Marathi', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* हेडर */
+        header {
+            background-color: var(--main-color);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom-left-radius: 50% 10%;
+            border-bottom-right-radius: 50% 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        header h2 {
+            font-size: 1.7em;
+            font-weight: 400;
+            margin-top: 0;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--main-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        /* इव्हेंट तपशील */
+        #event-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+            background-color: #e8f5e9; /* Light Green BG */
+        }
+
+        .date-location, .location-box, .age-group {
+            flex-basis: 30%;
+            padding: 15px 5px;
+            margin: 5px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .date-location {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            font-weight: bold;
+        }
+        .date-location .date {
+            font-size: 1.6em;
+            margin: 5px 0 0;
+        }
+        .location-box h3, .age-group h3 {
+            color: var(--highlight-color);
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+
+        /* नोंदणी विभाग */
+        #registration {
+            text-align: center;
+        }
+
+        .fees-table {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--main-color);
+            color: var(--white);
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .qr-code img {
+            max-width: 160px;
+            height: auto;
+            border: 5px solid var(--main-color);
+            border-radius: 4px;
+            display: block;
+            margin: 20px auto 10px;
+        }
+        
+        .link-text {
+            color: var(--highlight-color);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* नोंदणी बटण */
+        .register-button-container {
+            text-align: center;
+            margin: 30px 0 10px;
+        }
+
+        .register-button {
+            display: inline-block;
+            background-color: var(--highlight-color);
+            color: var(--white);
+            padding: 15px 35px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px; /* गोलाकार बटण */
+            transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            border: none;
+        }
+
+        .register-button:hover {
+            background-color: #A00;
+            transform: translateY(-2px);
+        }
+
+        /* सूचना विभाग */
+        #instructions {
+            background-color: #fcf8e3; /* Light Yellowish BG */
+            border: 1px dashed var(--secondary-color);
+        }
+        #instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        #instructions li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            text-align: justify;
+        }
+        #instructions li::before {
+            content: '📌'; /* पिन इमोजी */
+            position: absolute;
+            left: 0;
+        }
+        
+        /* संपर्क विभाग */
+        #contact {
+            text-align: center;
+            background-color: #e3f2fd; /* Light Blue BG */
+        }
+        #contact a {
+            color: var(--main-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        #contact a:hover {
+            text-decoration: underline;
+        }
+        .tag-line {
+            font-style: italic;
+            font-weight: bold;
+            color: var(--highlight-color);
+            margin-top: 15px;
+            font-size: 1.3em;
+        }
+
+        /* फुटर */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #388e3c; /* गडद हिरवा */
+            color: var(--white);
+            font-size: 0.9em;
+        }
+
+        /* मोबाइल प्रतिसाद (Mobile Responsiveness) */
+        @media (max-width: 650px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header h2 {
+                font-size: 1.4em;
+            }
+            #event-details {
+                flex-direction: column;
+            }
+            .date-location, .location-box, .age-group {
+                flex-basis: 100%;
+                margin: 8px 0;
+            }
+            .register-button {
+                font-size: 1.1em;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>राष्ट्रीय स्वयंसेवक संघ</h1>
+        <h2>🚩 सांगवी गट - प्रारंभिक वर्ग 🚩</h2>
+    </header>
+
+    <section id="event-details">
+        <div class="date-location">
+            <p class="tag">प्रशिक्षण वर्ग</p>
+            <p class="date">१४ ते १६ नोव्हेंबर २०२५</p>
+        </div>
+
+        <div class="location-box">
+            <h3>📍 स्थळ</h3>
+            <p>गणेश इंग्लिश मीडियम स्कूल</p>
+            <p>दापोडी - ४११०१२</p>
+        </div>
+
+        <div class="age-group">
+            <h3>👥 वयोगट</h3>
+            <p>**१३ ते १६ वर्षे पूर्ण**</p>
+        </div>
+    </section>
+
+    <section id="registration">
+        <h2>✅ नोंदणी आणि शुल्क</h2>
+
+        <div class="fees-table">
+            <table>
+                <tr><th>श्रेणी</th><th>शुल्क</th></tr>
+                <tr><td>बाल (१३ ते १५ वर्षे)</td><td>₹ १००/-</td></tr>
+                <tr><td>महाविद्यालयीन (१६ वर्षे पूर्ण)</td><td>₹ २००/-</td></tr>
+                <tr><td>तरुण/व्यवसायी</td><td>₹ ३००/-</td></tr>
+                <tr><td>शिक्षक/व्यवस्थापक</td><td>₹ ३०१/-</td></tr>
+            </table>
+        </div>
+        
+        <div class="qr-code">
+            <img src="92803_qr.png" alt="नोंदणीसाठी QR कोड स्कॅन करा">
+            <p>नोंदणीसाठी QR कोड **स्कॅन करा** किंवा खालील बटणावर क्लिक करा:</p>
+        </div>
+
+        <div class="register-button-container">
+            <a href="https://your-registration-link-here" target="_blank" class="register-button">
+                🚀 आत्ता नोंदणी करा 
+            </a>
+        </div>
+        
+    </section>
+
+    <section id="instructions">
+        <h2>📋 महत्त्वाच्या सूचना</h2>
+        <ul>
+            <li>वर्गास **पूर्वनोंदणी** आणि **उपस्थिती आवश्यक** आहे.</li>
+            <li>**गणवेश अपेक्षित नाही**, मात्र शिस्तीसाठी साधे/सभ्य पोषाख आणावेत.</li>
+            <li>**सरावासाठी आवश्यक:** कोणताही शू, टी शर्ट, विजार (ट्रॅक पॅन्ट/शॉर्ट) आणि दंडा.</li>
+            <li>**आणावयाचे साहित्य:** अंथरूण, पांघरूण, दंतमंजन, ताट, वाटी, पेला, वही, पेन व अन्य निवासाचे आवश्यक **वैयक्तिक साहित्य** आणावे.</li>
+            <li>**औषधे:** वैयक्तिक गरजेची औषधे (असल्यास) **आठवणीने** आणावीत.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>📞 संपर्क</h2>
+        <p><strong>गट कार्यवाह:</strong> राजेश कोताळसिंग रावत</p>
+        <p><strong>संपर्क क्रमांक:</strong> <a href="tel:9096341919">९०९६३४१९१९</a>, <a href="tel:9405029732">९४०५०२९७३२</a></p>
+        <p class="tag-line">चरेवेति चरेवेति (पुढे चला, पुढे चला)</p>
+    </section>
+
+    <footer>
+        <p>&copy; २०२५ राष्ट्रीय स्वयंसेवक संघ, सांगवी गट, पिंपरी-चिंचवड</p>
+    </footer>
+
+</body>
+</html>
